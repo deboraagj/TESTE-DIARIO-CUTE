@@ -1,0 +1,18 @@
+<h1>🌸 Meu Diário — {{monthLabel}}</h1>
+
+<div class="controls">
+  <form method="GET" action="/">
+    <button name="change" value="prev" class="nav-btn">◀</button>
+    <input type="hidden" name="year" value="{{year}}">
+    <input type="hidden" name="month" value="{{month}}">
+    <button name="change" value="next" class="nav-btn">▶</button>
+  </form>
+</div>
+
+<div class="calendar">
+  {{#each days}}
+    <a href="/day/{{this.date}}" class="day {{#if this.hasEntry}}filled{{/if}}">
+      <span class="num">{{this.day}}</span>
+    </a>
+  {{/each}}
+</div>

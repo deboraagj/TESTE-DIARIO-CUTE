@@ -1,0 +1,13 @@
+<a href="/" class="back">← Voltar</a>
+<h2>Anotação — {{date}}</h2>
+
+<form action="/day/{{date}}" method="POST">
+  <input type="hidden" name="returnTo" value="/">
+  <textarea name="text" rows="12" placeholder="Escreva aqui...">{{text}}</textarea>
+  <div class="row">
+    <button type="submit" class="btn">Salvar</button>
+    {{#if text}}
+      <button formaction="/day/{{date}}/delete" formmethod="POST" class="btn danger">Excluir</button>
+    {{/if}}
+  </div>
+</form>
