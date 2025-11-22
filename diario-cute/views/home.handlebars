@@ -11,8 +11,8 @@
 
 <div class="calendar">
   {{#each days}}
-    <a href="/day/{{this.date}}" class="day {{#if this.hasEntry}}filled{{/if}}">
-      <span class="num">{{this.day}}</span>
-    </a>
+  <a href="/day/{{this.date}}" class="day {{#if this.hasEntry}}filled{{/if}}">
+    <span class="num">{{this.day}}</span>
+  </a>
   {{/each}}
 </div>

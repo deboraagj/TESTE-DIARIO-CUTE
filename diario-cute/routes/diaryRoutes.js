@@ -32,11 +32,11 @@ router.get('/', async (req, res) => {
       where: {
         date: [start, end] // workaround not used by Sequelize directly; we'll filter manually below
       }
-    }).catch(()=>[]);
+    }).catch(() => []);
 
     // Simpler: fetch all and map (small app, OK)
     const all = await Diary.findAll({ attributes: ['date'] });
-    const datesSet = new Set(all.map(r => r.date ? r.date.toString().slice(0,10) : r.date));
+    const datesSet = new Set(all.map(r => r.date ? r.date.toString().slice(0, 10) : r.date));
 
     // marcardor hasEntry
     const daysWithFlag = days.map(d => ({ ...d, hasEntry: datesSet.has(d.date) }));
